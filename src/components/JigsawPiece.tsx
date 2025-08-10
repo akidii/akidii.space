@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Text, RoundedBox } from '@react-three/drei';
+import {RoundedBox } from '@react-three/drei';
 import * as THREE from 'three';
 import { gsap } from 'gsap';
 
@@ -81,35 +81,7 @@ export default function JigsawPiece({
           />
         </RoundedBox>
         
-        {/* 背面图案 */}
-        {!isFlipped && (
-          <Text
-            position={[0, 0, 0.06]}
-            fontSize={0.3}
-            color="#8892B0"
-            anchorX="center"
-            anchorY="middle"
-fontFamily="'Roboto Mono', monospace"
-          >
-            ?
-          </Text>
-        )}
-        
-        {/* 正面内容 */}
-        {isFlipped && (
-          <Text
-            position={[0, 0, 0.06]}
-            fontSize={0.15}
-            color="#0A192F"
-            anchorX="center"
-            anchorY="middle"
-fontFamily="'Roboto Mono', monospace"
-            maxWidth={1}
-            textAlign="center"
-          >
-            {content}
-          </Text>
-        )}
+      
       </mesh>
     </group>
   );
